@@ -3,9 +3,9 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landingpage from "./pages/landingpage/Landingpage";
-import Favorite from "./pages/favorite/Index";
 import Create from "./pages/Crud/Create";
 import Edit from "./pages/Crud/Edit";
+import Favorite from "./pages/Crud/Favorite";
 
 function App() {
   return (

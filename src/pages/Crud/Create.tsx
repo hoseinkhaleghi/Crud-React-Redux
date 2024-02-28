@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addList } from "../../UserReducer";
 import { useNavigate } from "react-router-dom";
+import Input from "../../components/common/input/Input";
+import Button from "../../components/common/button/Button";
 
 function Create() {
     const list = useSelector((state) => state.list);
@@ -16,22 +18,20 @@ function Create() {
         navigate('/')
     }
   return (
-    <div className="flex  justify-center items-center">
-      <div className=" border bg-gray-400 text-white p-5 ">
-        <h3>Add New User</h3>
-        <form onSubmit={handlesubmit} action="">
+    <div className="bg-gray-400 rounded-xl m-24 justify-center items-center flex flex-col py-4">
+        <h1>Add New User</h1>
+        <form  onSubmit={handlesubmit} action="">
           <div>
             <label htmlFor="name">Name:</label>
-            <input type="text" name="neme" className="text-black" onChange={e => setName(e.target.value)} />
+            <Input type="text" name="neme" className="text-black" onChange={e => setName(e.target.value)} />
           </div>
           <div>
             <label htmlFor="email">Email:</label>
-            <input type="text" name="email" className="text-black" onChange={e => setEmail(e.target.value)} />
+            <Input type="text" name="email" className="text-black" onChange={e => setEmail(e.target.value)} />
           </div>
           <br />
-          <button className="bg-green-400">Submit</button>
+          <button className="bg-green-400 rounded-md  text-base font-medium  px-8 py-3 ">Submit</button>
         </form>
-      </div>
     </div>
   );
 }
